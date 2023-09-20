@@ -13,10 +13,10 @@ int get_error(data_shell *datash, int eval)
 	switch (eval)
 	{
 	case -1:
-		error = error_env(datash);
+		error = error_get_cd(datash);
 		break;
 	case 126:
-		error = error_path_126(datash);
+		error = error_exit_shell(datash);
 		break;
 	case 127:
 		error = error_not_found(datash);
